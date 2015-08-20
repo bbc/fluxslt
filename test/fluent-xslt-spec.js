@@ -14,7 +14,7 @@ describe('Fluent XSLT', function() {
 
     it('should throw an error when no stylesheet is supplied', function(done) {
         fluxslt()
-            .run()
+            .runOn(content)
             .catch(function(error){
                 expect(error.message).toBe('No stylesheet has been loaded.');
                 done();
@@ -24,7 +24,7 @@ describe('Fluent XSLT', function() {
     it('should throw an error when no content is supplied', function(done) {
         fluxslt()
             .withStylesheet(stylesheet)
-            .run()
+            .runOn()
             .catch(function(error){
                 expect(error.message).toBe('No content has been loaded.');
                 done();
@@ -34,8 +34,7 @@ describe('Fluent XSLT', function() {
     it('should transform content', function(done) {
         fluxslt()
             .withStylesheet(stylesheet)
-            .withContent(content)
-            .run()
+            .runOn(content)
             .then(function(transformedOutput){
                 // Trim whitespace in output, don't know xslt well enough to strip all that stuff..
                 expect(transformedOutput.replace(/\s/g, '')).toBe(expectedOutput.replace(/\s/g, ''));
@@ -45,13 +44,12 @@ describe('Fluent XSLT', function() {
 
     it('should transform content with a stylesheet path not raw source', function(done) {
         fluxslt()
-            .withStylesheetPath(__dirname + '/fixtures/stylesheet.xsl');
-            .withContent(content)
-            .run()
+            .withStylesheetPath(__dirname + '/fixtures/stylesheet.xsl')
+            .runOn(content)
             .then(function(transformedOutput) {
                 // Trim whitespace in output, don't know xslt well enough to strip all that stuff..
                 expect(transformedOutput.replace(/\s/g, '')).toBe(expectedOutput.replace(/\s/g, ''));
                 done();
-            })
-    })
+            });
+    });
 });
