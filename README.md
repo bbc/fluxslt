@@ -5,7 +5,7 @@
 This library is a fluent wrapper with helper functions around `xsltproc`. It comes bundled with `libxslt` on your platform, so you'll need to make sure you've got that
 installed before you try running this.
 
-####Usage
+####Example Usage
 
 ```js
 var stylesheet = fs.readFileSync('path/to/my/stylesheet', 'utf-8'),
