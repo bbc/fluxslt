@@ -1,7 +1,7 @@
 {
-  "name": "fluent-xslt",
+  "name": "fluxslt",
   "version": "1.0.0",
-  "description": "Easy XSLT without the hassle"
+  "description": "Transform XML content with a nice fluent promise interface"
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/grunt jasmine"
