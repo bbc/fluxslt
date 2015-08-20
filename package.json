@@ -1,0 +1,26 @@
+{
+  "name": "fluent-xslt",
+  "version": "1.0.0",
+  "description": "#### Usage ```js var stylesheet = fs.readFileSync('path/to/my/stylesheet', 'utf-8'),     xmlContent = fs.readFileSync('path/to/xml/doc', 'utf-8'),     fluxslt = require('fluent-xslt');",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bbc/fluent-xslt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bbc/fluent-xslt/issues"
+  },
+  "homepage": "https://github.com/bbc/fluent-xslt",
+  "dependencies": {
+    "bluebird": "^2.9.34"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-jasmine": "git://github.com/bbc-sport/grunt-jasmine"
+  }
+}
