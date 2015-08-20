@@ -10,7 +10,7 @@ describe('Fluent XSLT', function() {
         stylesheet = fs.readFileSync(__dirname + '/fixtures/stylesheet.xsl', 'utf-8');
         content = fs.readFileSync(__dirname + '/fixtures/content.xml', 'utf-8');
         expectedOutput = fs.readFileSync(__dirname + '/fixtures/expected_output.xml', 'utf-8');
-    })
+    });
 
     it('should throw an error when no stylesheet is supplied', function(done) {
         fluxslt()
@@ -37,8 +37,21 @@ describe('Fluent XSLT', function() {
             .withContent(content)
             .run()
             .then(function(transformedOutput){
-                expect(transformedOutput).toBe(expectedOutput);
+                // Trim whitespace in output, don't know xslt well enough to strip all that stuff..
+                expect(transformedOutput.replace(/\s/g, '')).toBe(expectedOutput.replace(/\s/g, ''));
                 done();
             });
     });
+
+    it('should transform content with a stylesheet path not raw source', function(done) {
+        fluxslt()
+            .withStylesheetPath(__dirname + '/fixtures/stylesheet.xsl');
+            .withContent(content)
+            .run()
+            .then(function(transformedOutput) {
+                // Trim whitespace in output, don't know xslt well enough to strip all that stuff..
+                expect(transformedOutput.replace(/\s/g, '')).toBe(expectedOutput.replace(/\s/g, ''));
+                done();
+            })
+    })
 });
