@@ -23,10 +23,10 @@ describe('Fluent XSLT', function() {
 
     it('should throw an error when no content is supplied', function(done) {
         fluxslt()
-
+            .withStylesheet(stylesheet)
             .run()
             .catch(function(error){
-                expect(error.message).toBe('No stylesheet has been loaded.');
+                expect(error.message).toBe('No content has been loaded.');
                 done();
             });
     });
