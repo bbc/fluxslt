@@ -1,6 +1,6 @@
 {
   "name": "fluxslt",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Transform XML content with a nice fluent promise interface"
   "main": "index.js",
   "scripts": {
