@@ -9,7 +9,7 @@ describe('Fluent XSLT', function() {
     beforeEach(function() {
         stylesheet = fs.readFileSync(__dirname + '/fixtures/stylesheet.xsl');
         content = fs.readFileSync(__dirname + '/fixtures/content.xml');
-        expectedOutput = fs.readFileSync(__dirname + '/fixtures/expected.xml');
+        expectedOutput = fs.readFileSync(__dirname + '/fixtures/expected_output.xml');
     })
 
     it('should throw an error when no stylesheet is supplied', function(done) {
