@@ -7,9 +7,9 @@ describe('Fluent XSLT', function() {
         content;
 
     beforeEach(function() {
-        stylesheet = fs.readFileSync(__dirname + '/fixtures/stylesheet.xsl');
-        content = fs.readFileSync(__dirname + '/fixtures/content.xml');
-        expectedOutput = fs.readFileSync(__dirname + '/fixtures/expected_output.xml');
+        stylesheet = fs.readFileSync(__dirname + '/fixtures/stylesheet.xsl', 'utf-8');
+        content = fs.readFileSync(__dirname + '/fixtures/content.xml', 'utf-8');
+        expectedOutput = fs.readFileSync(__dirname + '/fixtures/expected_output.xml', 'utf-8');
     })
 
     it('should throw an error when no stylesheet is supplied', function(done) {
@@ -31,4 +31,14 @@ describe('Fluent XSLT', function() {
             });
     });
 
-})
+    it('should transform content', function(done) {
+        fluxslt()
+            .withStylesheet(stylesheet)
+            .withContent(content)
+            .run()
+            .then(function(transformedOutput){
+                expect(transformedOutput).toBe(expectedOutput);
+                done();
+            });
+    });
+});

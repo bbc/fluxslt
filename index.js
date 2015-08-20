@@ -6,6 +6,8 @@ function run(resolve, reject) {
     if (!this.content) {
         return reject(new Error('No content has been loaded.'));
     }
+
+    return resolve(this.content);
 }
 
 function fluxslt() {
@@ -13,6 +15,10 @@ function fluxslt() {
     return  {
         withStylesheet: function(stylesheet) {
             this.stylesheet = stylesheet;
+            return this;
+        },
+        withContent: function(content) {
+            this.content = content;
             return this;
         },
         run: function() {
