@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/bbc/fluent-xslt",
   "dependencies": {
-    "bluebird": "^2.9.34"
+    "bluebird": "^2.9.34",
+    "tmp": "0.0.27"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
