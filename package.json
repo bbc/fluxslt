@@ -20,7 +20,7 @@
     "bluebird": "^2.9.34",
     "tmp": "0.0.27"
   },
-  "keywords": ["xslt", "fluent", "fluxslt"]
+  "keywords": ["xslt", "fluent", "fluxslt"],
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-jasmine": "git://github.com/bbc-sport/grunt-jasmine"
