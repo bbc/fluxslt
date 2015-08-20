@@ -1,2 +1,2 @@
-# streaming-xslt
-Node Streaming XSLT Transformations
+# Fluent XSLT
+
