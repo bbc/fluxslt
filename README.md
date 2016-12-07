@@ -10,7 +10,7 @@ installed before you try running this.
 ```js
 var stylesheet = fs.readFileSync('path/to/my/stylesheet', 'utf-8'),
     xmlContent = fs.readFileSync('path/to/xml/doc', 'utf-8'),
-    fluxslt = require('fluent-xslt');
+    fluxslt = require('fluxslt');
 
 fluxslt()
     .withStylesheet(stylesheet)
@@ -24,7 +24,7 @@ fluxslt()
 
 ```js
 var xmlContent = fs.readFileSync('path/to/xml/doc', 'utf-8'),
-    fluxslt = require('fluent-xslt');
+    fluxslt = require('fluxslt');
 
 fluxslt()
     .withStylesheetPath('path/to/my/stylesheet')
